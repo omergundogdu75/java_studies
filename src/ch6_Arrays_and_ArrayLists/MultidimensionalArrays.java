@@ -11,5 +11,6 @@ public class MultidimensionalArrays {
         int[][] e = new int[2][]; // create 2 rows
         e[0] = new int[5]; // create 5 columns for row 0
         e[1] = new int[3]; // create 3 columns for row 1
+        //6.10.4
     }
 }

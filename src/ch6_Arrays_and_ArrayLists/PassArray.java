@@ -1,52 +1,66 @@
 package ch6_Arrays_and_ArrayLists;
 
-// Passing arrays and individual array elements to methods.
-
+/**
+ * {@code PassArray} sınıfı, Java'da dizileri ve dizi elemanlarını yöntemlere iletmenin etkilerini gösterir.
+ * Bu sınıf, bir tamsayı dizisi oluşturur, diziyi ve elemanlarını değiştiren yöntemleri çağırır ve bu değişikliklerin etkilerini gösterir.
+ */
 public class PassArray {
-    // main creates array and calls modifyArray and modifyElement
+    /**
+     * main metodu programın giriş noktasıdır. Bu metod, bir tamsayı dizisi oluşturur,
+     * diziyi değiştirmek için yöntemleri çağırır ve bu değişikliklerin etkilerini gösterir.
+     * @param args Komut satırı argümanları (bu programda kullanılmaz).
+     */
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
 
         System.out.printf(
-                "Effects of passing reference to entire array:%n" +
-                        "The values of the original array are:%n");
+                "Tüm diziyi referans olarak iletmek etkileri:%n" +
+                        "Orijinal dizi değerleri:%n");
 
-        // output original array elements
+        // Orijinal dizi elemanlarını yazdır
         for (int value : array) {
             System.out.printf(" %d", value);
         }
 
-        modifyArray(array); // pass array reference
-        System.out.printf("%n%nThe values of the modified array are:%n");
+        modifyArray(array); // Diziyi referans olarak iletiyoruz
+        System.out.printf("%n%nDeğiştirilen dizinin değerleri:%n");
 
-        // output modified array elements
+        // Değiştirilmiş dizi elemanlarını yazdır
         for (int value : array) {
             System.out.printf(" %d", value);
         }
 
         System.out.printf(
-                "%n%nEffects of passing array element value:%n" +
-                        "array[3] before modifyElement: %d%n", array[3]);
+                "%n%nDizi elemanı değerini iletmek etkileri:%n" +
+                        "modifyElement çağrılmadan önce array[3]: %d%n", array[3]);
 
-        modifyElement(array[3]); // attempt to modify array[3]
+        modifyElement(array[3]); // array[3] elemanını değiştirmeye çalışıyoruz
         System.out.printf(
-                "array[3] after modifyElement: %d%n", array[3]);
+                "modifyElement çağrıldıktan sonra array[3]: %d%n", array[3]);
     }
 
-    // multiply each element of an array by 2
+    /**
+     * Bu yöntem, bir dizinin her elemanını 2 ile çarpar.
+     * @param array2 Değiştirilecek tamsayı dizisi.
+     */
     public static void modifyArray(int[] array2) {
         for (int counter = 0; counter < array2.length; counter++) {
             array2[counter] *= 2;
         }
     }
 
-    // multiply argument by 2
+    /**
+     * Bu yöntem, argümanı 2 ile çarpmayı dener.
+     * Ancak, Java'da bu işlem orijinal değeri etkilemez.
+     * @param element Değiştirilmeye çalışılan tamsayı elemanı.
+     */
     public static void modifyElement(int element) {
         element *= 2;
         System.out.printf(
-                "Value of element in modifyElement: %d%n", element);
+                "modifyElement içindeki element değeri: %d%n", element);
     }
 }
+
 // Pass-By-Value vs. Pass-By-Reference
 //Bir argüman değere göre iletildiğinde, argümanın değerinin bir kopyası çağrılan yönteme iletilir. Çağrılan yöntem
 // yalnızca kopyayla çalışır. Çağrılan yöntemin kopyasında yapılan değişiklikler, arayandaki orijinal değişkenin
