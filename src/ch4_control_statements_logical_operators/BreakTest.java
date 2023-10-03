@@ -1,12 +1,15 @@
 package ch4_control_statements_logical_operators;
-// break statement exiting a for statement.
+
+/**
+ * Bu Java programı, bir for döngüsünün içinden çıkmak için break ifadesini kullanır.
+ */
 public class BreakTest {
     public static void main(String[] args) {
-        int count;// control variable also used after loop terminates
-        for ( count = 0; count <=10; count++) {// loop 10 times
-            if (count == 5) break; //terminates loop if count is 5
-            System.out.printf("%d ",count);
+        int count; // Kontrol değişkeni, döngü sona erdikten sonra da kullanılır
+        for (count = 0; count <= 10; count++) { // 10 kez döner
+            if (count == 5) break; // count 5 olduğunda döngüyü sonlandırır
+            System.out.printf("%d ", count);
         }
-        System.out.printf("%nBroke out loop at count = %d%n",count);
+        System.out.printf("%nDöngüyü count = %d değerinde sonlandırdı%n", count);
     }
 }

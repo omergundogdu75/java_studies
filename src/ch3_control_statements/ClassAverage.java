@@ -1,30 +1,32 @@
 package ch3_control_statements;
 
 import java.util.Scanner;
-// Solving the class-average problem using counter-controlled iteration.
+
+/**
+ * Bu Java programı, kullanıcı tarafından girilen 10 notun toplamını ve sınıfın ortalamasını hesaplar.
+ */
 public class ClassAverage {
     public static void main(String[] args) {
-        // create Scanner to obtain input from command window
-        Scanner input  = new Scanner(System.in);
-        // initialization phase
-        int total = 0;// initialize sum of grades entered by the user
-        int gradeCounter =1; // initialize # of grade to be entered next
+        // Kullanıcıdan girdi almak için bir Scanner oluşturulur.
+        Scanner input = new Scanner(System.in);
 
-        // processing phase uses counter-controlled iteration
-        while (gradeCounter <= 10){ //loop 10 times
-            System.out.print("Enter grade: "); //prompt
-            int grade = input.nextInt(); //input next grade
-            total += grade; // add grade to total
-            gradeCounter++; // increment counter by 1
+        // Başlangıç aşaması
+        int total = 0; // Kullanıcı tarafından girilen notların toplamını başlatır
+        int gradeCounter = 1; // Bir sonraki girilecek not sayısını başlatır
+
+        // İşlem aşaması, sayaç kontrollü yinelemeyi kullanır
+        while (gradeCounter <= 10) { // 10 kez döner
+            System.out.print("Notu girin: "); // Kullanıcıya talimat verir
+            int grade = input.nextInt(); // Bir sonraki notu alır
+            total += grade; // Notu toplama ekler
+            gradeCounter++; // Sayaç değerini 1 artırır
         }
 
-        //termination phase
-        int average = total / 10; //integer division yield integer result
+        // Sonlandırma aşaması
+        int average = total / 10; // İnteger bölme sonucunda bir tam sayı elde edilir
 
-        //display total and average of grades
-        System.out.printf("%nTotal of all 10 grades is %d%n",total);
-        System.out.printf("Class average is %d%n",average);
-
-
+        // Toplam not ve sınıf ortalamasını görüntüler
+        System.out.printf("%nTüm 10 notun toplamı %d%n", total);
+        System.out.printf("Sınıf ortalaması %d%n", average);
     }
 }

@@ -1,22 +1,28 @@
 package ch2_introduction_to_java_application_io_and_operators;
-//Addition program that inputs two numbers then display their sum
 
 import java.util.Scanner;
 
+/**
+ * Bu program, kullanıcının girdiği iki tamsayının toplamını hesaplar ve sonucu görüntüler.
+ */
 public class Addition {
-    //main method begins execution of Java application
+    /**
+     * Programın başlangıç noktasıdır. İşlem, buradan başlar.
+     *
+     */
     public static void main(String[] args) {
-        //Create a scanner to obtain input from the command window
+        // Kullanıcıdan girdi almak için bir tarayıcı (Scanner) oluşturulur.
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter first integer: ");
-        int number1 = input.nextInt(); // read first number from user
+        System.out.print("Birinci tamsayıyı giriniz: ");
+        int number1 = input.nextInt(); // Kullanıcıdan ilk sayıyı okur
 
-        System.out.print("Enter second integer: ");
-        int number2 = input.nextInt(); // read second number from user
+        System.out.print("İkinci tamsayıyı giriniz: ");
+        int number2 = input.nextInt(); // Kullanıcıdan ikinci sayıyı okur
 
-        int sum = number1 + number2; //add numbers, then store total in sum
+        int sum = number1 + number2; // Sayıları toplar, sonucu 'sum' değişkenine kaydeder
 
-        System.out.printf("Sum is %d%n",sum);//display sum
-    }//end method main
-}// end class Addition
+        // Toplamı ekrana formatlı bir şekilde görüntüler
+        System.out.printf("Toplam %d%n", sum);
+    } // main metodunun sonu
+} // Addition sınıfının sonu

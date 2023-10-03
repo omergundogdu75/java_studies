@@ -1,15 +1,20 @@
 package ch3_control_statements;
-// Prefix increment and postfix increment operators.
+
+/**
+ * Bu Java programı, ön ek artırma ve son ek artırma operatörlerini gösterir.
+ */
 public class Increment {
     public static void main(String[] args) {
-        // demonstrate postfix increment operator
+        // Son ek artırma operatörünü göster
         int c = 5;
-        System.out.printf("c before postincrement: %d%n",c);
-        System.out.printf("     postincrement: %d%n",c++);
-        System.out.printf(" c after postincrement: %d%n",c);
+        System.out.printf("Son ek artırma öncesi c: %d%n", c);
+        System.out.printf("     Son ek artırma: %d%n", c++);
+        System.out.printf(" Son ek artırma sonrası c: %d%n", c);
         System.out.println();
-        System.out.printf("c before preincrement: %d%n",c);
-        System.out.printf("     preincrement: %d%n",++c);
-        System.out.printf(" c after preincrement: %d%n",c);
+
+        // Ön ek artırma operatörünü göster
+        System.out.printf("Ön ek artırma öncesi c: %d%n", c);
+        System.out.printf("     Ön ek artırma: %d%n", ++c);
+        System.out.printf(" Ön ek artırma sonrası c: %d%n", c);
     }
 }

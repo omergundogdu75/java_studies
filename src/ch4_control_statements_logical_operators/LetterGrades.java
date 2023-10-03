@@ -1,75 +1,76 @@
 package ch4_control_statements_logical_operators;
 
-import java.util.Scanner; // LetterGrades class uses the switch statement to count letter grades.
+import java.util.Scanner;
 
+/**
+ * Bu Java programı, kullanıcıdan alınan notları değerlendirir ve harf notlarına göre sınıflandırır.
+ */
 public class LetterGrades {
     public static void main(String[] args) {
-        int total = 0; // sum of grades
-        int gradeCounter = 0; // number of grades entered
-        int aCount = 0; // count of A grades
-        int bCount = 0; // count of B grades
-        int cCount = 0; // count of C grades
-        int dCount = 0; // count of D grades
-        int fCount = 0; // count of F grades
+        int total = 0; // Notların toplamı
+        int gradeCounter = 0; // Girilen not sayısı
+        int aCount = 0; // A notlarının sayısı
+        int bCount = 0; // B notlarının sayısı
+        int cCount = 0; // C notlarının sayısı
+        int dCount = 0; // D notlarının sayısı
+        int fCount = 0; // F notlarının sayısı
 
         Scanner input = new Scanner(System.in);
         System.out.printf("%s%n%s%n %s%n %s%n",
-                "Enter the integer grades in the range 0-100.",
-                "Type the end-of-file indicator to terminate input:",
-                "On UNIX/Linux/macOS type <Ctrl> d then press Enter",
-                "On Windows type <Ctrl> z then press Enter");
+                "0-100 arasındaki tam sayı notlarını girin.",
+                "Girişi sonlandırmak için dosya sonu göstergesini kullanın:",
+                "UNIX/Linux/macOS üzerinde <Ctrl> d sonra Enter tuşuna basın",
+                "Windows üzerinde <Ctrl> z sonra Enter tuşuna basın");
 
-        // loop until user enters the end-of-file indicator
+        // Kullanıcı dosya sonu göstergesini girene kadar döngüyü çalıştır
         while (input.hasNext()) {
-            int grade = input.nextInt(); // read grade
-            total += grade; // add grade to total
-            ++gradeCounter; // increment number of grades
+            int grade = input.nextInt(); // Notu oku
+            total += grade; // Notu toplama ekle
+            ++gradeCounter; // Not sayısını artır
 
-            // increment appropriate letter-grade counter
+            // Uygun harf notu sayacını artır
             switch (grade / 10) {
-                case 9: // grade was between 90
-                case 10: // and 100, inclusive
+                case 9: // Not 90 ile 100 arasındaysa
+                case 10: // (9 ile 10 arasındaysa)
                     ++aCount;
-                    break; // exits switch
-                case 8: // grade was between 80 and 89
+                    break; // switch'ten çık
+                case 8: // Not 80 ile 89 arasındaysa
                     ++bCount;
-                    break; // exits switch
-                case 7: // grade was between 70 and 79
+                    break; // switch'ten çık
+                case 7: // Not 70 ile 79 arasındaysa
                     ++cCount;
-                    break; // exits switch
-                case 6: // grade was between 60 and 69
+                    break; // switch'ten çık
+                case 6: // Not 60 ile 69 arasındaysa
                     ++dCount;
-                    break; // exits switch
-                default: // grade was less than 60
+                    break; // switch'ten çık
+                default: // Not 60'dan küçükse
                     ++fCount;
-                    break; // optional; exits switch anyway
+                    break; // İsteğe bağlı; switch'ten çıkar her durumda
             }
         }
 
-        // display grade report
-        System.out.printf("%nGrade Report:%n");
+        // Not raporunu görüntüle
+        System.out.printf("%nNot Raporu:%n");
 
-        // if user entered at least one grade...
+        // Kullanıcı en az bir not girdiyse...
         if (gradeCounter != 0) {
-            // calculate average of all grades entered
+            // Girilen tüm notların ortalamasını hesapla
             double average = (double) total / gradeCounter;
 
-            // output summary of results
-            System.out.printf("Total of the %d grades entered is %d%n",
+            // Sonuçların özetini görüntüle
+            System.out.printf("Girilen %d notların toplamı %d%n",
                     gradeCounter, total);
 
-            System.out.printf("Class average is %.2f%n", average);
-             System.out.printf("%n%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d%n",
-                     "Number of students who received each grade:",
-                     "A: ", aCount, // display number of A grades
-                     "B: ", bCount, // display number of B grades
-                     "C: ", cCount, // display number of C grades
-                     "D: ", dCount, // display number of D grades
-                     "F: ", fCount); // display number of F grades
-             }
-         else { // no grades were entered, so output appropriate message
-             System.out.println("No grades were entered");
-             }
-
+            System.out.printf("Sınıf ortalaması %.2f%n", average);
+            System.out.printf("%n%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d%n",
+                    "Her notu alan öğrenci sayısı:",
+                    "A: ", aCount, // A notlarının sayısını görüntüle
+                    "B: ", bCount, // B notlarının sayısını görüntüle
+                    "C: ", cCount, // C notlarının sayısını görüntüle
+                    "D: ", dCount, // D notlarının sayısını görüntüle
+                    "F: ", fCount); // F notlarının sayısını görüntüle
+        } else { // Not girilmemişse, uygun mesajı görüntüle
+            System.out.println("Not girilmemiştir");
+        }
     }
 }

@@ -1,12 +1,15 @@
 package ch4_control_statements_logical_operators;
-// Summing integers with the for statement.
+
+/**
+ * Bu Java programı, for döngüsünü kullanarak 2 ile 20 arasındaki çift tamsayıları toplar.
+ */
 public class Sum {
     public static void main(String[] args) {
         int total = 0;
-        // total even integers from 2 through 20
+        // 2 ile 20 arasındaki çift tamsayıları topla
         for (int number = 2; number <= 20; number += 2) {
-            total+=number;
+            total += number;
         }
-        System.out.printf("Sum is %d%n",total);
+        System.out.printf("Toplam %d%n", total);
     }
 }

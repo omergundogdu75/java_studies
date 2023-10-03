@@ -1,48 +1,49 @@
 package ch4_control_statements_logical_operators;
-// Fig. 4.17: LogicalOperators.java
-// Logical operators.
 
+/**
+ * Bu Java programı, mantıksal operatörleri (&&, ||, &, |, ^, !) kullanarak koşullu ifadelerin doğruluğunu değerlendirir.
+ */
 public class LogicalOperators {
     public static void main(String[] args) {
-        // create truth table for && (conditional AND) operator
+        // && (Koşullu VE) operatörü için doğruluk tablosunu oluştur
         System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-                "Conditional AND (&&)", "false && false", (false && false),
+                "Koşullu VE (&&)", "false && false", (false && false),
                 "false && true", (false && true),
                 "true && false", (true && false),
                 "true && true", (true && true));
 
-        // create truth table for || (conditional OR) operator
+        // || (Koşullu VEYA) operatörü için doğruluk tablosunu oluştur
         System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-                "Conditional OR (||)", "false || false", (false || false),
+                "Koşullu VEYA (||)", "false || false", (false || false),
                 "false || true", (false || true),
                 "true || false", (true || false),
                 "true || true", (true || true));
 
-        // create truth table for & (boolean logical AND) operator
+        // & (boolean mantıksal VE) operatörü için doğruluk tablosunu oluştur
         System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-                "Boolean logical AND (&)", "false & false", (false & false),
+                "Boolean mantıksal VE (&)", "false & false", (false & false),
                 "false & true", (false & true),
                 "true & false", (true & false),
                 "true & true", (true & true));
 
-         // create truth table for | (boolean logical inclusive OR) operator
-         System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-                 "Boolean logical inclusive OR (|)",
-                 "false | false", (false | false),
-                 "false | true", (false | true),
-                 "true | false",(true | false) ,
-                 "true | true", (true | true));
+        // | (boolean mantıksal dahil VEYA) operatörü için doğruluk tablosunu oluştur
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Boolean mantıksal dahil VEYA (|)",
+                "false | false", (false | false),
+                "false | true", (false | true),
+                "true | false",(true | false) ,
+                "true | true", (true | true));
 
-         // create truth table for ^ (boolean logical exclusive OR) operator
-         System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
-                 "Boolean logical exclusive OR (^)",
-                 "false ^ false", (false ^ false),
-                 "false ^ true", (false ^ true),
-                 "true ^ false", (true ^ false),
-                 "true ^ true", (true ^ true));
+        // ^ (boolean mantıksal özel VEYA) operatörü için doğruluk tablosunu oluştur
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Boolean mantıksal özel VEYA (^)",
+                "false ^ false", (false ^ false),
+                "false ^ true", (false ^ true),
+                "true ^ false", (true ^ false),
+                "true ^ true", (true ^ true));
 
-         // create truth table for ! (logical negation) operator
-         System.out.printf("%s%n%s: %b%n%s: %b%n", "Logical NOT (!)",
-                 "!false", (!false), "!true", (!true));
+        // ! (mantıksal değil) operatörü için doğruluk tablosunu oluştur
+        System.out.printf("%s%n%s: %b%n%s: %b%n", "Mantıksal DEĞİL (!)",
+                "!false", (!false), "!true", (!true));
     }
 }

@@ -1,27 +1,32 @@
 package ch2_introduction_to_java_application_io_and_operators;
-// Compare integers using if statements, relational operators
-// and equality operators
 
 import java.util.Scanner;
 
+/**
+ * Bu program, kullanıcının girdiği iki tamsayının karşılaştırmasını yapar ve sonuçları görüntüler.
+ */
 public class Comparison {
-    // main method begins execution of Java application
+    /**
+     * Programın başlangıç noktasıdır. İşlem, buradan başlar.
+     *
+     */
     public static void main(String[] args) {
 
-        // create Scanner to obtain input from command line
+        // Kullanıcıdan girdi almak için bir tarayıcı (Scanner) oluşturulur.
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter first integer: "); //prompt
-        int number1 = input.nextInt(); // read first number from user
 
-        System.out.print("Enter second integer: "); //prompt
-        int number2 = input.nextInt(); // read second number from user
+        System.out.print("Birinci tamsayıyı giriniz: "); // Kullanıcıya talimat verir
+        int number1 = input.nextInt(); // Kullanıcıdan ilk sayıyı okur
 
-        if (number1 == number2) System.out.printf("%d == %d%n",number1,number2);
-        if (number1 != number2) System.out.printf("%d != %d%n",number1,number2);
-        if (number1 < number2) System.out.printf("%d < %d%n",number1,number2);
-        if (number1 > number2) System.out.printf("%d > %d%n",number1,number2);
-        if (number1 <= number2) System.out.printf("%d <= %d%n",number1,number2);
-        if (number1 >= number2) System.out.printf("%d >= %d%n",number1,number2);
+        System.out.print("İkinci tamsayıyı giriniz: "); // Kullanıcıya talimat verir
+        int number2 = input.nextInt(); // Kullanıcıdan ikinci sayıyı okur
 
-    } //end method main
-} //end class comparison
+        if (number1 == number2) System.out.printf("%d == %d%n", number1, number2);
+        if (number1 != number2) System.out.printf("%d != %d%n", number1, number2);
+        if (number1 < number2) System.out.printf("%d < %d%n", number1, number2);
+        if (number1 > number2) System.out.printf("%d > %d%n", number1, number2);
+        if (number1 <= number2) System.out.printf("%d <= %d%n", number1, number2);
+        if (number1 >= number2) System.out.printf("%d >= %d%n", number1, number2);
+
+    } // main metodunun sonu
+} // Comparison sınıfının sonu

@@ -2,42 +2,45 @@ package ch3_control_statements;
 
 import java.util.Scanner;
 
-// Solving the class-average problem using sentinel-controlled iteration.
+/**
+ * Bu Java programı, kullanıcı tarafından girilen sınıf notlarının toplamını ve ortalama değerini hesaplar.
+ * Kullanıcı -1 değerini girene kadar notları alır.
+ */
 public class ClassAverage2 {
 
     public static void main(String[] args) {
-        // create Scanner to obtain input from command window
+        // Kullanıcıdan girdi almak için bir Scanner oluşturulur.
         Scanner input = new Scanner(System.in);
-        // initialization phase
-        int total = 0; // initial
-        int gradeCounter = 0; // initialize # of grades entered so far
-        // processing phase
-        // prompt for input and read grade from user
-        System.out.print("Enter grade or -1 to quit: ");
+
+        // Başlangıç aşaması
+        int total = 0; // Notların toplamını başlatır
+        int gradeCounter = 0; // Şu ana kadar girilen not sayısını başlatır
+
+        // İşlem aşaması
+        // Kullanıcıdan not almak için giriş yapın ve kullanıcıdan not alın
+        System.out.print("Notu girin veya çıkmak için -1 girin: ");
         int grade = input.nextInt();
 
-        // loop until sentinel value read from user
-        while (grade != -1){
-            total = total + grade; // add grade to total
-            gradeCounter = gradeCounter + 1; // increment counter
+        // Kullanıcı tarafından girilen -1 değeri okunana kadar döner
+        while (grade != -1) {
+            total = total + grade; // Notu toplama ekler
+            gradeCounter = gradeCounter + 1; // Sayaç değerini artırır
 
-            System.out.print("Enter grade or -1 to quit: ");
+            System.out.print("Notu girin veya çıkmak için -1 girin: ");
             grade = input.nextInt();
         }
 
-        // termination phase
-        // if user entered at least one grade...
-
-        if (gradeCounter != 0){
-            // use number with decimal point to calculate average of grades
+        // Sonlandırma aşaması
+        // Kullanıcı en az bir not girdiyse...
+        if (gradeCounter != 0) {
+            // Notların ortalama değerini hesaplamak için ondalıklı sayı kullanılır
             double average = (double) total / gradeCounter;
-            // display total and average (with two digits of precision)
-            System.out.printf("%nTotal of the %d grades entered is %d%n",gradeCounter,total);
-            System.out.printf("Class average is %.2f%n", average);
-        }else {
-            // no grades were entered, so output appropriate message
-            System.out.println("No grades were entered");
+            // Toplamı ve ortalama değeri (iki ondalık hane hassasiyetiyle) görüntüler
+            System.out.printf("%nGirilen %d notun toplamı %d%n", gradeCounter, total);
+            System.out.printf("Sınıf ortalaması %.2f%n", average);
+        } else {
+            // Hiç not girilmediğinden uygun mesajı görüntüler
+            System.out.println("Hiç not girilmedi");
         }
-
     }
 }
