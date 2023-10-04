@@ -1,33 +1,40 @@
 package ch6_Arrays_and_ArrayLists;
 
-// Initializing an array using command-line arguments.
-
+/**
+ * {@code InitArray2} sınıfı, komut satırı argümanları kullanarak bir diziyi başlatmanın nasıl yapılacağını gösterir.
+ * Eğer uygun sayıda komut satırı argümanı sağlanmazsa, kullanıcıya bir hata mesajı gösterilir.
+ * Aksi takdirde, belirtilen boyutta bir dizi oluşturulur, başlangıç değeri ve artış değeri komut satırı argümanlarından alınır
+ * ve her dizi elemanının değeri hesaplanarak ekrana yazdırılır.
+ */
 public class InitArray2 {
+    /**
+     * Bu metod, komut satırı argümanlarını kullanarak bir tamsayı dizisini başlatır ve değerlerini hesaplar.
+     * @param args Komut satırı argümanları; dizi boyutu, başlangıç değeri ve artış değeri içermelidir.
+     */
     public static void main(String[] args) {
-        // check number of command-line arguments
+        // Komut satırı argümanlarının sayısını kontrol et
         if (args.length != 3) {
             System.out.printf(
-                    "Error: Please re-enter the entire command, including%n" +
-                            "an array size, initial value and increment.%n");
+                    "Hata: Lütfen tam komutu, içerisinde%n" +
+                            "dizi boyutunu, başlangıç değerini ve artış değerini ekleyerek tekrar girin.%n");
         } else {
-            // get array size from first command-line argument
+            // Dizi boyutunu ilk komut satırı argümanından al
             int arrayLength = Integer.parseInt(args[0]);
 
             int[] array = new int[arrayLength];
 
-            // get initial value and increment from command-line arguments
+            // Başlangıç değeri ve artış değerini komut satırı argümanlarından al
             int initialValue = Integer.parseInt(args[1]);
             int increment = Integer.parseInt(args[2]);
 
-
-            // calculate value for each array element
+            // Her dizi elemanının değerini hesapla
             for (int counter = 0; counter < array.length; counter++) {
                 array[counter] = initialValue + increment * counter;
             }
 
             System.out.printf("%s%8s%n", "Index", "Value");
 
-            // display array index and value
+            // Dizi indeksini ve değerini ekrana yazdır
             for (int counter = 0; counter < array.length; counter++) {
                 System.out.printf("%5d%8d%n", counter, array[counter]);
             }
