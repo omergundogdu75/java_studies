@@ -15,6 +15,7 @@ public class Time2Test {
         displayTime("t4: hour, minute and second specified", t4);
         displayTime("t5: Time2 object t4 specified", t5);
 
+
         // attempt to initialize t6 with invalid values
         try {
             Time2 t6 = new Time2(27, 74, 99); // invalid values
