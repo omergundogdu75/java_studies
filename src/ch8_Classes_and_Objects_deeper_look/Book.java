@@ -15,7 +15,7 @@ public enum Book {
 
     // instance fields
     private final String title; // book title
-    private final String copyrightYear; // copyright year
+    private  String copyrightYear; // copyright year
 
     // enum constructor
     Book(String title, String copyrightYear) {
@@ -32,4 +32,10 @@ public enum Book {
     public String getCopyrightYear() {
         return copyrightYear;
     }
+
+    public String setCopyrightYear(String getCopyrightYear){
+        this.copyrightYear =getCopyrightYear;
+        return this.copyrightYear;
+    }
+
 }
